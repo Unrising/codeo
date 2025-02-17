@@ -1,0 +1,11 @@
+/* src/components/FolderIcon/FolderIcons.css */
+.folder-icon{
+    width: 80px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.folder-icon img{
+    width: 100%;
+    height: auto;
+}
