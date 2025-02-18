@@ -1,0 +1,35 @@
+/* src/components/Window/Window.css */
+.window-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .window {
+    width: 80%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0078d7;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .window-content {
+    padding: 20px;
+  }
