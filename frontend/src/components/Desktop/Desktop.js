@@ -8,9 +8,17 @@ const Desktop = () => {
   const [openWindow, setOpenWindow] = useState(null);
 
   const handleIconClick = (name) => {
-    setOpenWindow(name); // You can pass additional data if needed
+    if (!openWindows.includes(name)) {
+      setOpenWindows([...openWindows, name]);
+    }
   };
-
+  
+  const closeWindow = (name) => {
+    setOpenWindows(openWindows.filter(win => win !== name));
+  };
+  
+  <Taskbar openWindows={openWindows} setActiveWindow={setOpenWindow} />
+  
   return (
     <div className="desktop">
       <FolderIcon name="Projects" onClick={() => handleIconClick('Projects')} />
