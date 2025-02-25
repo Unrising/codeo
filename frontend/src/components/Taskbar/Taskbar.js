@@ -1,19 +1,34 @@
-// src/components/Taskbar/Taskbar.js
-import React from 'react';
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import './Taskbar.css';
 
-const Taskbar = ({ openWindows, setActiveWindow }) => {
+const Taskbar = ({ openWindows = []}) => {
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [date, setDate] = useState(new Date());
+
   return (
     <div className="taskbar">
       <button>Start</button>
+      
       <div className="taskbar-windows">
         {openWindows.map((window, index) => (
-          <button key={index} onClick={() => setActiveWindow(window)}>
-            {window}
+          <button key={index}>
+            {window.name}
           </button>
         ))}
       </div>
-      <span className='clock'>{new Date().toLocaleTimeString()}</span>
+
+      <div className="clock-container" onClick={() => setShowCalendar(!showCalendar)}>
+        <span className="clock">{date.toLocaleTimeString()}</span>
+        <span className="date">{date.toLocaleDateString()}</span>
+      </div>
+
+      {showCalendar && (
+        <div className="calendar-container">
+          <Calendar onChange={setDate} value={date} />
+        </div>
+      )}
     </div>
   );
 };

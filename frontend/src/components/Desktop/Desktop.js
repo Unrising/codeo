@@ -6,43 +6,40 @@ import Window from '../Window/Window';
 import Taskbar from '../Taskbar/Taskbar';
 
 const Desktop = () => {
-  const [openWindows, setOpenWindows] = useState([]); 
-  const [activeWindow, setActiveWindow] = useState(null);
+  const [openWindows, setOpenWindows] = useState([]);
 
   const handleIconClick = (name) => {
-    if (!openWindows.includes(name)) {
-      setOpenWindows([...openWindows, name]);
+    if (!openWindows.some(win => win.name === name)) {
+      const centerX = window.innerWidth / 2 - 300; 
+      const centerY = window.innerHeight / 2 - 200; 
+      setOpenWindows([...openWindows, { name, x: centerX, y: centerY }]);
     }
-    setActiveWindow(name);
   };
 
   const closeWindow = (name) => {
-    setOpenWindows(openWindows.filter(win => win !== name));
-    if (activeWindow === name) {
-      setActiveWindow(null);
-    }
+    setOpenWindows(openWindows.filter(win => win.name !== name));
   };
 
   return (
     <div className="desktop">
-      {/* Folder Icons */}
+
       <FolderIcon name="Projects" onClick={() => handleIconClick('Projects')} />
       <FolderIcon name="About Me" onClick={() => handleIconClick('About Me')} />
       <FolderIcon name="Contact" onClick={() => handleIconClick('Contact')} />
 
-      {/* Open Windows */}
       {openWindows.map((win) => (
-        <Window key={win} title={win} onClose={() => closeWindow(win)}>
-          {win === 'Projects' && <p>Here are my projects...</p>}
-          {win === 'About Me' && <p>About me content...</p>}
-          {win === 'Contact' && <p>Contact information...</p>}
+        <Window key={win.name} title={win.name} x={win.x} y={win.y} onClose={() => closeWindow(win.name)}>
+          {win.name === 'Projects' && <p>Here are my projects...</p>}
+          {win.name === 'About Me' && <p>About me content...</p>}
+          {win.name === 'Contact' && <p>Contact information...</p>}
         </Window>
       ))}
 
-      {/* Taskbar */}
-      <Taskbar openWindows={openWindows} setActiveWindow={setActiveWindow} />
+      <Taskbar openWindows={openWindows} />
     </div>
   );
 };
 
 export default Desktop;
+
+

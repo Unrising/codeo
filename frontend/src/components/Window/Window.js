@@ -1,21 +1,20 @@
-// src/components/Window/Window.js
 import Draggable from 'react-draggable';
-import React from 'react';
+import React, { useRef } from 'react';
 import './Window.css';
 
-const Window = ({ title, children, onClose }) => {
+const Window = ({ title, children, onClose, x = 100, y = 100 }) => {
+  const nodeRef = useRef(null);
+
   return (
-    <div className="window-overlay">
-      <Draggable handle=".window-header">
-      <div className="window">
+    <Draggable nodeRef={nodeRef} handle=".window-header" defaultPosition={{ x, y }}>
+      <div className="window" ref={nodeRef}>
         <div className="window-header">
           <h2>{title}</h2>
           <button onClick={onClose}>X</button>
         </div>
         <div className="window-content">{children}</div>
       </div>
-      </Draggable>
-    </div>
+    </Draggable>
   );
 };
 

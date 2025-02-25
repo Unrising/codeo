@@ -22,7 +22,89 @@
     cursor: pointer;
 }
   
-.taskbar .clock {
-    font-size: 14px;
+.clock-container {
+    text-align: center;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px;
+    color: var(--text-color);
 }
-  
+
+.clock {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    margin-top: 2px;
+}
+
+.calendar-container {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    background: var(--taskbar-bg);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.calendar-container {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    background: var(--taskbar-bg);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 280px; /* Augmenter la taille */
+}
+
+/* Style général du calendrier */
+.react-calendar {
+    width: 100%;
+    background: var(--window-bg);
+    color: var(--text-color);
+    border: 1px solid var(--window-border);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Style des boutons */
+.react-calendar__navigation button {
+    background: var(--window-header-bg);
+    color: white;
+    border: none;
+    margin: 2px;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.react-calendar__navigation button:hover {
+    background: rgba(255, 87, 34, 0.7);
+}
+
+/* Style des jours */
+.react-calendar__tile {
+    background: transparent;
+    border-radius: 5px;
+    transition: all 0.3s;
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Jour sélectionné */
+.react-calendar__tile--active {
+    background: var(--window-header-bg);
+    color: white;
+    border-radius: 5px;
+}

@@ -13,15 +13,18 @@
 }
   
 .window {
-    width: 80%;
-    max-width: 600px;
+    width: 400px; /* Augmenter la largeur */
+    height: 300px; /* Augmenter la hauteur */
     background: var(--window-bg);
     border: 1px solid var(--window-border);
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
 }
-  
+
 .window-header {
     display: flex;
     justify-content: space-between;
@@ -29,7 +32,16 @@
     background: var(--window-header-bg);
     color: var(--text-color);
     padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
+
+.window-content {
+    flex-grow: 1;
+    padding: 15px;
+    color: var(--text-color);
+}
+
   
 .window-header h2 {
     margin: 0;
@@ -42,10 +54,5 @@
     color: var(--text-color);
     font-size: 18px;
     cursor: pointer;
-}
-  
-.window-content {
-    padding: 20px;
-    color: var(--text-color);
 }
   

@@ -18,3 +18,11 @@
     width: 100%;
     height: auto;
 }
+
+.folder-icon span {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); 
+}

@@ -8,12 +8,18 @@ html, body {
   }
   
   .desktop {
-    width: 100vw;   
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-auto-rows: 100px;
+    gap: 15px;
+    padding: 20px;
+    align-content: start;
+    position: relative;
+    width: 100vw;
     height: 100vh;
     background: url('/public/assets/components/Desktop/desktop.webp');
-    background-size: cover;        
-    background-position: center;    
-    background-repeat: no-repeat;   
-    position: relative;
-  }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
