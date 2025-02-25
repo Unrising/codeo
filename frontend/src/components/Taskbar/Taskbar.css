@@ -5,14 +5,24 @@
     left: 0;
     width: 100%;
     height: 40px;
-    background: #333;
-    color: #fff;
+    background: var(--taskbar-bg);
+    color: var(--text-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 }
-
-.taskbar .clock{
-    font-size:14px
+  
+.taskbar button {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+    cursor: pointer;
 }
+  
+.taskbar .clock {
+    font-size: 14px;
+}
+  

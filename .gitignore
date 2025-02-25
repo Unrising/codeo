@@ -1,0 +1,13 @@
+# Node.js
+backend/node_modules/
+
+# .env
+backend/.env
+
+# Logs
+logs 
+*.log
+
+# OS
+.DS_STORE
+Thumbs.db

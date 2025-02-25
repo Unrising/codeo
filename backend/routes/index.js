@@ -1,6 +1,6 @@
 // backend/routes/index.js
 const express = require('express');
-const router = express.router();
+const router = express.Router();
 const exampleController = require('../controllers/exampleController');
 
 // On definie une route 

@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --desktop-bg: #1E1E1E;
+  --taskbar-bg: #121212;
+  --window-bg: #2C2C2C;
+  --window-header-bg: #FF5722;
+  --window-border: #3A3A3A;
+  --text-color: #EEEEEE;
+  --icon-bg: #2A2A2A;
+  --icon-border: #3A3A3A;
+}

@@ -10,3 +10,5 @@ const Taskbar = () => {
         </div>
     );
 };
+
+export default Taskbar;
