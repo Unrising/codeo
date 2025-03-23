@@ -1,22 +1,15 @@
-/* src/components/FolderIcon/FolderIcons.css */
-
 .folder-icon {
-    width: 80px;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     cursor: pointer;
+    width: 80px;
     padding: 5px;
-    border-radius: 4px;
-    transition: transform 0.2s;
 }
-  
-.folder-icon:hover {
-    transform: scale(1.05);
-}
-  
-.folder-icon img {
-    width: 100%;
-    height: auto;
+
+.folder-icon svg {
+    font-size: 50px; 
 }
 
 .folder-icon span {
@@ -24,5 +17,9 @@
     font-size: 14px;
     font-weight: bold;
     color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.folder-icon:active {
+    transform: scale(1.05);
 }
